@@ -108,6 +108,7 @@ const MenuDropdown = () => {
               width='30'
             />
           </div>
+          <strong>{user && user.displayName ? user.displayName :""}</strong>
         </div>
       </div>
       {isOpen && (

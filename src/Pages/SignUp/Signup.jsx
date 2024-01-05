@@ -29,7 +29,7 @@ const Signup = () => {
             console.log(imageData);
 
             // Update user profile with additional data (name, photo, etc.)
-            await updateUserProfile(name, imageData?.data?.url);
+            await updateUserProfile(data.name,imageData?.data?.url);
 
             // save user data in Database
 
