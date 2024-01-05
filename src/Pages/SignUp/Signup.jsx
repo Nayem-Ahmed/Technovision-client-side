@@ -3,16 +3,49 @@ import { useForm } from 'react-hook-form';
 import { IoMdPerson, IoMdMail, IoMdLock, IoMdAttach } from 'react-icons/io';
 import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
+import { toast } from 'react-toastify';
+import { imgUpload } from '../../Hooks/imgbb';
+
 const Signup = () => {
+    const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
 
-    const onSubmit = (data) => {
-        // Your form submission logic goes here
-        console.log(data);
+    const onSubmit = async (data) => {
+        try {
+            // Your form submission logic goes here
+            console.log(data);
+
+            // Assuming imgUpload is a function that handles image upload
+            const imageData = await imgUpload(data.photo[0]);
+            console.log(imageData);
+
+            // Create user and get user ID
+            const { user } = await createUser(data.email, data.password);
+
+            // Update user profile with additional data (name, photo, etc.)
+            await updateUserProfile(name, imageData?.data?.url);
+
+            // Additional logic or redirection
+            // ...
+
+            console.log('Registration successful!', user);
+        } catch (error) {
+            toast.error(error.message);
+        }
+    };
+
+    const handleGoogleSignIn = async () => {
+        try {
+            await signInWithGoogle();
+            // Additional logic or redirection after Google sign-in
+        } catch (error) {
+            toast.error(error.message);
+        }
     };
 
     return (
