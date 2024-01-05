@@ -16,8 +16,9 @@ const Signup = () => {
     };
 
     return (
-        <div className="flex justify-center items-center my-20 h-screen">
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div className="flex justify-center items-center my-16 h-screen">
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4">
+            <h2 className="text-2xl font-bold mb-4 text-center">Sign Up</h2>
                 {/* Name Input */}
                 <div className="mb-4">
                     <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
@@ -61,6 +62,7 @@ const Signup = () => {
                     <input
                         type="password"
                         id="password"
+                        placeholder='*****'
                         {...register("password", { required: true, minLength: 6 })}
                         className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${errors.password ? 'border-red-500' : ''
                             }`}
@@ -87,12 +89,12 @@ const Signup = () => {
                 <div className="flex items-center justify-between">
                     <button
                         type="submit"
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                     >
                         Sign Up
                     </button>
                 </div>
-                <div className='  text-center block'><span className='text-xl'>------------ or ------------</span></div>
+                <div className='  text-center block'><span className='text-xl'>----------------- or ----------------</span></div>
                 {/* Continue with Google Button */}
                 <div className="mb-6">
                     <button
@@ -104,7 +106,7 @@ const Signup = () => {
                         Continue with Google
                     </button>
                 </div>
-                <p>Already have an account? <Link className='underline text-blue-500' to='/login'>Login in</Link></p>
+                <p>Already have an account? <Link className='hover:underline text-blue-500' to='/login'>Login in</Link></p>
 
 
             </form>
