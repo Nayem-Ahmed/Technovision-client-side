@@ -6,7 +6,7 @@ import './navbar.css'
 
 const Navbar = () => {
     return (
-        <div className='flex  items-center justify-between px-5  w-full bg-white z-10 shadow-sm'>
+        <div className='flex  items-center justify-between px-5  w-full bg-gray-50 z-10 shadow-sm'>
             <div className='logo'>
                 <Link to='/'><img className='w-24' src={technovision} alt="" /></Link>
             </div>

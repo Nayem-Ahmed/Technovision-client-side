@@ -20,7 +20,7 @@ const Footer = () => {
             </div>
 
             <div className='text-center'>
-                <p>Copyright © 2024 - All right reserved by ACME Industries Ltd</p>
+            <p>&copy; 2024 - All rights reserved by <span className='font-semibold'>Technonision Inc</span></p>
             </div>
         </div>
     );
