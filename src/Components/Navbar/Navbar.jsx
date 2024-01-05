@@ -1,8 +1,8 @@
 import React from 'react';
-
 import technovision from '../../assets/technovision.png'
 import MenuDropdown from './MenuDropdown';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import './navbar.css'
 
 const Navbar = () => {
     return (
@@ -12,18 +12,18 @@ const Navbar = () => {
             </div>
 
             <div className='flex flex-col md:flex-row lg:flex-row cursor-pointer '>
-                <Link
+                <NavLink
                     to='/'
-                    className=' lg:px-4 lg:py-3 hover:bg-neutral-100 transition font-semibold'
+                    className='nav lg:px-4 lg:py-3 hover:bg-neutral-100 transition font-semibold'
                 >
                     Home
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                     to='/products'
-                    className=' lg:px-4 lg:py-3 hover:bg-neutral-100 transition font-semibold'
+                    className='nav lg:px-4 lg:py-3 hover:bg-neutral-100 transition font-semibold'
                 >
                     Products
-                </Link>
+                </NavLink>
  
             </div>
             <div className='button'>
