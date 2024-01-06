@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { toast } from 'react-toastify';
 import { imgUpload } from '../../Hooks/imgbb';
+import { saveUser } from '../../Hooks/auth';
 
 const Signup = () => {
     const { createUser, updateUserProfile, signInWithGoogle } = useAuth();
@@ -19,10 +20,11 @@ const Signup = () => {
     const onSubmit = async (data) => {
         try {
             // Your form submission logic goes here
-            console.log(data);
+            // console.log(data);
 
             // Create user
             const { user } = await createUser(data.email, data.password);
+            console.log(user);
 
             // Assuming imgUpload is a function that handles image upload
             const imageData = await imgUpload(data.photo[0]);
@@ -32,6 +34,8 @@ const Signup = () => {
             await updateUserProfile(data.name,imageData?.data?.url);
 
             // save user data in Database
+            const sendUserData = await saveUser(user)
+            console.log(sendUserData)
 
              // get token
 
@@ -47,7 +51,7 @@ const Signup = () => {
 
     const handleGoogleSignIn = async () => {
         try {
-            await signInWithGoogle();
+            const result = await signInWithGoogle()
             // Additional logic or redirection after Google sign-in
         } catch (error) {
             toast.error(error.message);
