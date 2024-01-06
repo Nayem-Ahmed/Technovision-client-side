@@ -1,0 +1,82 @@
+[
+  {
+    "img": "https://example.com/product1.jpg",
+    "brandname": "Apple",
+    "productname": "Apple AirPods Pro",
+    "price": 49.99,
+    "rating": 4.5,
+    "description": "Indulge in the epitome of luxury with our premium essentials. Immerse yourself in unparalleled comfort and style as you experience the finest materials and craftsmanship. Elevate your everyday life with the sophistication and opulence of Luxury Essentials."
+  },
+  {
+    "img": "https://example.com/product2.jpg",
+    "brandname": "Tech Innovators",
+    "productname": "Smartphone Charging Stand",
+    "price": 29.99,
+    "rating": 4.2,
+    "description": "Simplify your life with our innovative Smartphone Charging Stand. Keep your devices organized and charged with this sleek and stylish accessory. Embrace the convenience of modern technology while maintaining an elegant aesthetic in your home or office."
+  },
+  {
+    "img": "https://example.com/product3.jpg",
+    "brandname": "Fashion Trends",
+    "productname": "Designer Sunglasses",
+    "price": 89.99,
+    "rating": 4.8,
+    "description": "Stay on-trend with our Designer Sunglasses collection. Shield your eyes from the sun in style with these high-quality, fashion-forward shades. Elevate your look and make a statement wherever you go with our chic and versatile eyewear."
+  },
+  {
+    "img": "https://example.com/product4.jpg",
+    "brandname": "Home Essentials",
+    "productname": "Smart Thermostat",
+    "price": 59.99,
+    "rating": 4.3,
+    "description": "Create a comfortable and energy-efficient home with our Smart Thermostat. Control your home's climate with ease using cutting-edge technology. Save energy and money while enjoying the perfect temperature in every room of your living space."
+  },
+  {
+    "img": "https://example.com/product5.jpg",
+    "brandname": "Fitness Gear",
+    "productname": "Wireless Sport Earbuds",
+    "price": 39.99,
+    "rating": 4.0,
+    "description": "Elevate your workout experience with our Wireless Sport Earbuds. Enjoy the freedom of movement without compromising on sound quality. These sweat-resistant earbuds are designed for an active lifestyle, providing a secure and comfortable fit for all your fitness activities."
+  },
+  {
+    "img": "https://example.com/product6.jpg",
+    "brandname": "Gourmet Delights",
+    "productname": "Artisanal Coffee Sampler",
+    "price": 49.99,
+    "rating": 4.5,
+    "description": "Indulge in the rich flavors of our Artisanal Coffee Sampler. Experience a curated selection of premium coffee beans from around the world. Elevate your coffee ritual and savor the nuances of each cup with this exceptional gourmet delight."
+  },
+  {
+    "img": "https://example.com/product7.jpg",
+    "brandname": "Adventure Seekers",
+    "productname": "Compact Camping Lantern",
+    "price": 34.99,
+    "rating": 4.1,
+    "description": "Illuminate your outdoor adventures with our Compact Camping Lantern. This portable and durable lantern is perfect for camping, hiking, and other outdoor activities. Embrace the spirit of adventure with reliable and bright illumination wherever you go."
+  },
+  {
+    "img": "https://example.com/product8.jpg",
+    "brandname": "Pet Essentials",
+    "productname": "Interactive Pet Toy Set",
+    "price": 24.99,
+    "rating": 4.6,
+    "description": "Keep your furry friends entertained with our Interactive Pet Toy Set. Engage and bond with your pets through these fun and stimulating toys. Enhance their physical and mental well-being while creating joyful moments with your beloved pets."
+  },
+  {
+    "img": "https://example.com/product9.jpg",
+    "brandname": "Wellness Solutions",
+    "productname": "Aromatherapy Essential Oil Diffuser",
+    "price": 49.99,
+    "rating": 4.3,
+    "description": "Create a soothing and tranquil environment with our Aromatherapy Essential Oil Diffuser. Immerse yourself in the calming scents of essential oils and experience relaxation and stress relief. Elevate your wellness routine with this stylish and functional diffuser."
+  },
+  {
+    "img": "https://example.com/product10.jpg",
+    "brandname": "Home Decor Elegance",
+    "productname": "Modern Geometric Wall Art",
+    "price": 79.99,
+    "rating": 4.4,
+    "description": "Enhance your living space with our Modern Geometric Wall Art. Add a touch of elegance and sophistication to your home decor with these eye-catching pieces. Elevate your surroundings and express your style through the timeless beauty of modern art."
+  }
+]

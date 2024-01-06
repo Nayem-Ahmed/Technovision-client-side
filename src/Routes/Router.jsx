@@ -4,6 +4,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Signup from "../Pages/SignUp/Signup";
 import Login from "../Pages/Login/Login";
+import Products from "../Pages/Products";
  
 export const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
         },
         {
           path: '/products',
-          element: <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi qui atque vel totam consectetur molestiae reiciendis excepturi amet iste autem laudantium, doloremque quam earum distinctio reprehenderit repellat impedit ducimus. Veniam, fuga rerum atque saepe soluta quam ratione fugiat necessitatibus hic voluptas voluptatibus suscipit magni dolor tenetur, nesciunt exercitationem itaque vitae?</div>,
+          element: <Products></Products>,
         },
     ],
 },
