@@ -94,7 +94,7 @@ const MenuDropdown = () => {
         {/* Dropdown btn */}
         <div
           onClick={() => setIsOpen(!isOpen)}
-          className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition'
+          className='p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition text-white'
         >
           <AiOutlineMenu />
           <div className='hidden md:block'>
@@ -108,7 +108,7 @@ const MenuDropdown = () => {
               width='30'
             />
           </div>
-          <strong>{user && user.displayName ? user.displayName :""}</strong>
+          <strong className='text-white'>{user && user.displayName ? user.displayName :""}</strong>
         </div>
       </div>
       {isOpen && (

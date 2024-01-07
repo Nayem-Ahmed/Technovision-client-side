@@ -9,21 +9,21 @@ const Navbar = () => {
     return (
         <div>
             <Headroom>
-                <div className='flex  items-center justify-between px-5  w-full bg-gray-50 z-50 shadow-sm'>
+                <div className='flex  items-center justify-between px-5  w-full  bg-[#192a56]  z-50 shadow-sm'>
                     <div className='logo'>
                         <Link to='/'><img className='w-28' src={technovision} alt="" /></Link>
                     </div>
 
-                    <div className='flex flex-col md:flex-row lg:flex-row cursor-pointer '>
+                    <div className='flex text-white flex-col md:flex-row lg:flex-row cursor-pointer '>
                         <NavLink
                             to='/'
-                            className='nav lg:px-4 lg:py-3 hover:bg-neutral-100 transition font-semibold'
+                            className='nav lg:px-4 lg:py-3   transition font-semibold'
                         >
                             Home
                         </NavLink>
                         <NavLink
                             to='/products'
-                            className='nav lg:px-4 lg:py-3 hover:bg-neutral-100 transition font-semibold'
+                            className='nav lg:px-4 lg:py-3  transition font-semibold'
                         >
                             Products
                         </NavLink>

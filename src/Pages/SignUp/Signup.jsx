@@ -50,7 +50,7 @@ const Signup = () => {
     };
 
     const handleGoogleSignIn = async () => {
-        try {
+        try { 
             const result = await signInWithGoogle()
             // Additional logic or redirection after Google sign-in
         } catch (error) {

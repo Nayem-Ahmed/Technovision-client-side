@@ -3,9 +3,9 @@ import banner from '../../assets/banner.png'
 
 const Banner = () => {
     return (
-      <div className='mt-10 bg-fixed'>
+      <div className='bg-fixed bg-[#192a56]  p-4 lg:-mt-6 text-white -mt-7'>
           <div className='flex gap-6  md:flex-row flex-col-reverse  items-center p-4'>
-            <div className='content md:basis-1/2'>
+            <div className='content md:basis-1/2 mt-8'>
                 <h2 className=' text-4xl mb-2 font-semibold'>Welcome to Our Website</h2>
                 <p className=' text-2xl mb-2'>Discover amazing products<br></br> and services. Join us today!</p>
                 <button
@@ -15,7 +15,7 @@ const Banner = () => {
                     Click me
                 </button>
             </div>
-            <div className='img'>
+            <div className='img mt-8'>
                 <img className='w-[30rem]' src={banner} alt="" />
             </div>
         </div>
