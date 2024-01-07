@@ -11,7 +11,7 @@ const Navbar = () => {
             <Headroom>
                 <div className='flex  items-center justify-between px-5  w-full bg-gray-50 z-50 shadow-sm'>
                     <div className='logo'>
-                        <Link to='/'><img className='w-24' src={technovision} alt="" /></Link>
+                        <Link to='/'><img className='w-28' src={technovision} alt="" /></Link>
                     </div>
 
                     <div className='flex flex-col md:flex-row lg:flex-row cursor-pointer '>

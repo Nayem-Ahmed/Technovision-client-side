@@ -10,13 +10,13 @@ const Footer = () => {
                 <div>
                     <NavLink
                         to='/'
-                        className=' lg:px-4 lg:py-3  transition font-semibold'
+                        className=' lg:px-4 lg:py-3 hover:text-red-500   transition font-semibold'
                     >
                         Home
                     </NavLink>
                     <NavLink
                         to='/products'
-                        className=' lg:px-4 lg:py-3  transition font-semibold'
+                        className=' lg:px-4 lg:py-3 hover:text-red-500 transition font-semibold'
                     >
                         Products
                     </NavLink>
@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
 
             <div className='text-center mt-3'>
-                <p>&copy; 2024 - All rights reserved by <span className='font-semibold'>Technonision Inc</span></p>
+                <p>&copy; 2024 - All rights reserved by <span className='font-semibold'>Technovision Inc</span></p>
             </div>
         </div>
     );
