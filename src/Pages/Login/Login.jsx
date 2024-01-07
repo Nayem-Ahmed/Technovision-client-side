@@ -28,7 +28,7 @@ const Login = () => {
             // get token
 
             toast('Signin successfull')
-            navigate('/')
+            navigate(location?.state ? location.state : '/');
 
 
             console.log('Signin successful!', user);
