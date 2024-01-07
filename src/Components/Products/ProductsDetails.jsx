@@ -1,12 +1,46 @@
+import { Rating } from '@smastrom/react-rating';
 import React from 'react';
+import { FaHeart } from 'react-icons/fa';
+import { useLoaderData } from 'react-router-dom';
 
 const ProductsDetails = () => {
+    const productsDetails = useLoaderData();
     return (
         <div className='my-10 p-4'>
-           <div>
-           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia rerum nisi adipisci similique, amet voluptas minus assumenda laborum excepturi sapiente porro harum, et voluptatem eum repellat, impedit facere a! Cum molestiae dolore, dolor, asperiores sint, possimus provident dolorem magni eligendi fuga alias autem! Esse dicta possimus enim distinctio, quo inventore. Nobis ullam, id, vel earum temporibus optio doloribus consequuntur fugiat iste consectetur commodi nihil illum, nesciunt est? Voluptatem cupiditate est sed natus quo illo, officiis molestiae suscipit quis alias et velit itaque minima ea magni obcaecati impedit! Ipsa modi corrupti, mollitia dolorem dicta maiores autem consequuntur commodi distinctio voluptatum non laborum obcaecati aliquam cumque aut, a, ipsum voluptate molestiae. Praesentium maxime, ut rem eos laudantium illum hic fugit expedita ipsum quam laborum sequi eum tenetur, amet non. Tenetur nisi tempore hic facere eum aperiam, praesentium rerum molestias quas nam quasi, ea adipisci. In quaerat itaque commodi voluptatibus, aliquid voluptatum error fugit cum. Molestias suscipit, quasi optio qui consequuntur quos consequatur tempore reprehenderit esse velit porro deleniti ducimus quo quidem recusandae ab unde ut perspiciatis nesciunt alias facere ipsum. Optio, ipsum rem. Explicabo nobis, fuga molestiae, possimus alias cumque quo molestias fugit ad quae a adipisci eligendi corporis nemo minus cum.</p>
-           </div>
+        <div className='flex flex-col md:flex-row gap-8 items-center'>
+            <div className='aspect-w-3 aspect-h-4 w-64 md:w-96 relative overflow-hidden rounded-xl'>
+                <img
+                    className='object-cover w-full h-full transition-transform transform hover:scale-105'
+                    src={productsDetails.img}
+                    alt='Product'
+                />
+                <div className='absolute top-3 right-3'>
+                    <FaHeart className='text-red-500' />
+                </div>
+            </div>
+            <div className='flex flex-col flex-1'>
+                <div className='font-semibold text-2xl mb-2'>{productsDetails.productname}</div>
+                <div className=' text-xl mb-2'>Brand name: {productsDetails.brandname}</div>
+                <div className='font-light text-neutral-500 mb-2'>
+                    5 nights . June 19 - 26
+                </div>
+                <div className='flex flex-row items-center justify-between mb-2'>
+                    <div className='font-semibold text-xl'>Price: ${productsDetails.price}</div>
+                    <div>
+                        <Rating value={productsDetails.rating} style={{ maxWidth: 180 }} readOnly />
+                    </div>
+                </div>
+                <div className='mb-5 text-lg text-neutral-500'>${productsDetails.description}</div>
+                <button
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+                    type='button'
+                >
+                    Add to Cart
+                </button>
+            </div>
         </div>
+    </div>
+
     );
 };
 
