@@ -123,7 +123,7 @@ const MenuDropdown = () => {
 
             {user ? <>
               <Link
-                to='/dasboard'
+                to='/dashboard'
                 className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
               >
                 Dashboard
