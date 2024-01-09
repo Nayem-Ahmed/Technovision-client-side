@@ -40,6 +40,11 @@ export const router = createBrowserRouter([
         path:'/dashboard/addproducts',
         element: <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis aliquam tempora accusamus consequuntur inventore, atque aut odio ullam error aperiam.</div>
 
+      },
+      {
+        path:'/dashboard/manage',
+        element: <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis aliquam tempora accusamus consequuntur inventore, atque aut odio ullam error aperiam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis aliquam tempora accusamus consequuntur inventore, atque aut odio ullam error aperiam.</div>
+
       }
     ],
   }

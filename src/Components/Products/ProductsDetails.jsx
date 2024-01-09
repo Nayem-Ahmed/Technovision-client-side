@@ -2,9 +2,37 @@ import { Rating } from '@smastrom/react-rating';
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
+import { addCart } from '../../Hooks/products';
+import Swal from 'sweetalert2';
 
 const ProductsDetails = () => {
     const productsDetails = useLoaderData();
+
+    const handleAddCart = async () => {
+        try {
+          // Create an array with a single object without the _id property
+          const cartDataArray = [{ ...productsDetails, _id: undefined }];
+          await addCart(cartDataArray); // Send the array to addCart
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Added to Cart',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'Error adding to Cart',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
+      };
+      
+    
     return (
         <div className='my-10 p-4'>
         <div className='flex flex-col md:flex-row gap-8 items-center'>
@@ -31,7 +59,7 @@ const ProductsDetails = () => {
                     </div>
                 </div>
                 <div className='mb-5 text-lg text-neutral-500'>${productsDetails.description}</div>
-                <button
+                <button onClick={handleAddCart}
                     className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
                     type='button'
                 >
