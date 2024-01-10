@@ -1,10 +1,16 @@
 import axiosSecure from "./axiosSecure"
 
-// Fetch all rooms from db
+// Add products 
+export const AddProductsPost = async (productdata) => {
+  const { addData } = await axiosSecure.post('/products',productdata)
+  return addData
+}
+
+// Fetch all products from db
 export const getAllProducts = async () => {
     const { data } = await axiosSecure('/products')
     return data
-  }
+}
 
 // Add Cart products
 export const addCart = async (cartdata) => {
