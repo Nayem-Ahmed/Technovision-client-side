@@ -63,9 +63,9 @@ const Products = () => {
       });
   }, []);
 
-  // const filteredProducts = products.filter(product =>
-  //   product.productname.toLowerCase().includes(searchQuery.toLowerCase())
-  // );
+  const filteredProducts = products.filter(product =>
+    product.productname.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   if (loading) return <Loader />;
 
@@ -79,15 +79,15 @@ const Products = () => {
         className='mb-6 p-2 mt-12 bg-gray-50  border-2 rounded w-3/5 focus:outline-none focus:ring focus:border-blue-300'
       />
 
-      {/* {filteredProducts.length === 0 ? (
+      {filteredProducts.length === 0 ? (
         <p className='text-gray-500 text-center'>No products found.</p>
-      ) : ( */}
+      ) : (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
-          { products.map(product => (
+          { filteredProducts.map(product => (
             <ProductsCard key={product._id} products={product} />
           ))}
         </div>
-      {/* )} */}
+      )} 
     </div>
   );
 };

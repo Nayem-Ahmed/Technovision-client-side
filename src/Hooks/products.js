@@ -1,6 +1,6 @@
 import axiosSecure from "./axiosSecure"
 
-// Add products 
+// Add products (post) databse
 export const AddProductsPost = async (productdata) => {
   const { addData } = await axiosSecure.post('/products',productdata)
   return addData

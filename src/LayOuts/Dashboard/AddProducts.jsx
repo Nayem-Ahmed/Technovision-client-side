@@ -4,8 +4,10 @@ import { IoMdAttach } from 'react-icons/io';
 import { imgUpload } from '../../Hooks/imgbb';
 import { toast } from 'react-toastify';
 import { AddProductsPost } from '../../Hooks/products';
+import { useNavigate } from 'react-router-dom';
  ;
 const AddProducts = () => {
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -27,7 +29,7 @@ const AddProducts = () => {
 
 
              toast(' Add Products successfull')
-            //  navigate('/')
+             navigate('/dashboard/manage')
 
 
 
