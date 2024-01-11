@@ -5,8 +5,10 @@ import { imgUpload } from '../../Hooks/imgbb';
 import { toast } from 'react-toastify';
 import { AddProductsPost } from '../../Hooks/products';
 import { useNavigate } from 'react-router-dom';
- ;
+import useAuth from '../../Hooks/useAuth';
+
 const AddProducts = () => {
+    const {user} = useAuth();
     const navigate = useNavigate()
     const {
         register,

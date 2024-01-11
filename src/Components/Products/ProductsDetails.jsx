@@ -4,14 +4,16 @@ import { FaHeart } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import { addCart } from '../../Hooks/products';
 import Swal from 'sweetalert2';
+import useAuth from '../../Hooks/useAuth';
 
 const ProductsDetails = () => {
     const productsDetails = useLoaderData();
+    const {user} = useAuth();
 
     const handleAddCart = async () => {
         try {
           // Create an array with a single object without the _id property
-          const cartDataArray = [{ ...productsDetails, _id: undefined }];
+          const cartDataArray = [{ ...productsDetails, _id: undefined ,email:user?.email}];
           await addCart(cartDataArray); // Send the array to addCart
           Swal.fire({
             position: 'top',

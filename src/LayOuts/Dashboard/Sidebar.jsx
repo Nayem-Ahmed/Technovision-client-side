@@ -9,7 +9,7 @@ import logo from '../../assets/technovision.png'
 import { AiOutlineBars } from 'react-icons/ai'
 import { CgProfile } from "react-icons/cg";
 import { IoBagAddSharp, IoHomeSharp } from "react-icons/io5";
-import { MdManageAccounts } from "react-icons/md";
+import { MdManageAccounts ,MdAddShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom'
 
 
@@ -48,9 +48,9 @@ const Sidebar = () => {
             >
                 <div>
                     <div>
-                        <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-rose-100 mx-auto'>
+                        <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-blue-100 mx-auto'>
                             {/* <Logo /> */}
-                            <img className='w-10' src={logo} alt="" /> Technovision Inc.
+                            <img className='w-10' src={logo} alt=""/>Technovision Inc.
                         </div>
                     </div>
 
@@ -67,6 +67,11 @@ const Sidebar = () => {
                                 icon={MdManageAccounts}
                                 label='Manage Products'
                                 address='/dashboard/manage'
+                            />
+                            <MenuItem
+                                icon={MdAddShoppingCart }
+                                label='My Carts'
+                                address='/dashboard/mycarts'
                             />
                         </nav>
 

@@ -17,3 +17,11 @@ export const addCart = async (cartdata) => {
   const { cart } = await axiosSecure.post('/addcart',cartdata)
   return cart
 }
+
+// Get Cart products
+export const getAddCart = async (email) => {
+  //  const { data } = await axiosSecure(`/addcart?email=${email}`)
+  const { data } = await axiosSecure(`/addcart/${email}`)
+  return data
+}
+
