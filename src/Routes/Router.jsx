@@ -10,6 +10,7 @@ import ProductsDetails from "../Components/Products/ProductsDetails";
 import Dashboard from "../LayOuts/Dashboard/Dashboard";
 import AddProducts from "../LayOuts/Dashboard/AddProducts";
 import MyCart from "../LayOuts/Dashboard/MyCart";
+import ManageProducts from "../LayOuts/Dashboard/ManageProducts";
 
 export const router = createBrowserRouter([
   {
@@ -45,7 +46,7 @@ export const router = createBrowserRouter([
       },
       {
         path:'/dashboard/manage',
-        element: <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis aliquam tempora accusamus consequuntur inventore, atque aut odio ullam error aperiam Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis aliquam tempora accusamus consequuntur inventore, atque aut odio ullam error aperiam.</div>
+        element:<ManageProducts></ManageProducts>,
 
       },
       {

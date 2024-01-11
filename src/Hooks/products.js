@@ -18,7 +18,7 @@ export const addCart = async (cartdata) => {
   return cart
 }
 
-// Get Cart products
+// Get Cart products by params
 export const getAddCart = async (email) => {
   //  const { data } = await axiosSecure(`/addcart?email=${email}`)
   const { data } = await axiosSecure(`/addcart/${email}`)
