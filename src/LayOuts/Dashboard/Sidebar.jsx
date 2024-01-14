@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import MenuItem from './MenuItem'
 import useAuth from '../../Hooks/useAuth'
 // logo
@@ -9,19 +9,37 @@ import logo from '../../assets/technovision.png'
 import { AiOutlineBars } from 'react-icons/ai'
 import { CgProfile } from "react-icons/cg";
 import { IoBagAddSharp, IoHomeSharp } from "react-icons/io5";
-import { MdManageAccounts ,MdAddShoppingCart } from "react-icons/md";
+import { MdManageAccounts, MdAddShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom'
+import { getRoll } from '../../Hooks/auth'
 
 
 
 
 const Sidebar = () => {
-    const { logOut } = useAuth()
+    const { user } = useAuth();
+    const [cartData, setCartData] = useState();
     const [isActive, setActive] = useState(false)
 
     const handleToggle = () => {
         setActive(!isActive)
     }
+
+
+    useEffect(() => {
+        const fetchCartData = async () => {
+            if (user?.email) {
+                const data = await getRoll(user?.email);
+                setCartData(data[0]);
+            }
+        };
+
+        fetchCartData();
+    }, [user?.email]);
+    console.log(cartData?.role);
+
+
+
     return (
         <>
             {/* Small Screen Navbar */}
@@ -50,7 +68,7 @@ const Sidebar = () => {
                     <div>
                         <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-blue-100 mx-auto'>
                             {/* <Logo /> */}
-                            <img className='w-10' src={logo} alt=""/>Technovision Inc.
+                            <img className='w-10' src={logo} alt="" />Technovision Inc.
                         </div>
                     </div>
 
@@ -58,18 +76,22 @@ const Sidebar = () => {
                     <div className='flex flex-col justify-between flex-1 mt-6'>
 
                         <nav>
+                            {
+                                cartData?.role === 'admin' && <>
+                                    <MenuItem
+                                        icon={IoBagAddSharp}
+                                        label='Add Products'
+                                        address='/dashboard/addproducts'
+                                    />
+                                    <MenuItem
+                                        icon={MdManageAccounts}
+                                        label='Manage Products'
+                                        address='/dashboard/manage'
+                                    />
+                                </>
+                            }
                             <MenuItem
-                                icon={IoBagAddSharp}
-                                label='Add Products'
-                                address='/dashboard/addproducts'
-                            />
-                            <MenuItem
-                                icon={MdManageAccounts}
-                                label='Manage Products'
-                                address='/dashboard/manage'
-                            />
-                            <MenuItem
-                                icon={MdAddShoppingCart }
+                                icon={MdAddShoppingCart}
                                 label='My Carts'
                                 address='/dashboard/mycarts'
                             />

@@ -16,14 +16,15 @@ const Profile = () => {
 
         fetchCartData();
     }, [user?.email]);
-    console.log(cartData);
+    console.log(user);
     return (
         <div>
               <div>
-            {cartData && (
-                <p>User Role: {cartData.role}</p>
-                // Assuming your role data is stored in a property called 'role'
-            )}
+
+                <p>User Role: {cartData?.role}</p>
+                <p>User Role: {cartData?.email}</p>
+                <img className='w-24' src={user?.photoURL} alt="" />
+       
         </div>
             
         </div>
