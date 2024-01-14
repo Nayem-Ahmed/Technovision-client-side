@@ -8,7 +8,6 @@ const ManageProducts = () => {
   
     useEffect(() => {
       setLoading(true);
-  
       getAllProducts()
         .then(data => {
           setProductsmanage(data);
@@ -22,13 +21,13 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <table class="min-w-full bg-white border border-gray-300">
+            <table className="min-w-full bg-white border border-gray-300">
                 <thead>
                     <tr>
-                        <th class="py-2  border-b">Product Name</th>
-                        <th class="py-2  border-b">Products Image</th>
-                        <th class="py-2  border-b">Delete</th>
-                        <th class="py-2  border-b">Update</th>
+                        <th className="py-2  border-b">Product Name</th>
+                        <th className="py-2  border-b">Products Image</th>
+                        <th className="py-2  border-b">Delete</th>
+                        <th className="py-2  border-b">Update</th>
                     </tr>
                 </thead>
                 <tbody>

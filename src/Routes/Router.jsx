@@ -11,6 +11,7 @@ import Dashboard from "../LayOuts/Dashboard/Dashboard";
 import AddProducts from "../LayOuts/Dashboard/AddProducts";
 import MyCart from "../LayOuts/Dashboard/MyCart";
 import ManageProducts from "../LayOuts/Dashboard/ManageProducts";
+import Profile from "../LayOuts/Dashboard/Profile";
 
 export const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ export const router = createBrowserRouter([
       {
         path:'/dashboard/mycarts',
         element: <MyCart></MyCart>,
+
+      },
+      {
+        path:'/dashboard/profile',
+        element:<Profile></Profile>,
 
       }
     ],
