@@ -4,12 +4,12 @@ import { getAddCart } from '../../Hooks/products';
 import { FaHeart } from 'react-icons/fa';
 import { Rating } from '@smastrom/react-rating';
 import { RiDeleteBin6Line } from "react-icons/ri";
+import useRole from '../../Hooks/useRole';
 
 
 const MyCart = () => {
     const { user } = useAuth();
     const [cartData, setCartData] = useState([]);
-
     useEffect(() => {
         const fetchCartData = async () => {
             if (user?.email) {

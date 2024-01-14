@@ -12,6 +12,7 @@ import AddProducts from "../LayOuts/Dashboard/AddProducts";
 import MyCart from "../LayOuts/Dashboard/MyCart";
 import ManageProducts from "../LayOuts/Dashboard/ManageProducts";
 import Profile from "../LayOuts/Dashboard/Profile";
+import Adminroute from "./Adminroute";
 
 export const router = createBrowserRouter([
   {
@@ -38,16 +39,16 @@ export const router = createBrowserRouter([
   { path: '/login', element: <Login /> },
   {
     path: '/dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <Privetroute><Dashboard></Dashboard></Privetroute>,
     children: [
       {
         path:'/dashboard/addproducts',
-        element:<AddProducts></AddProducts>,
+        element:<Adminroute><AddProducts></AddProducts></Adminroute>,
 
       },
       {
         path:'/dashboard/manage',
-        element:<ManageProducts></ManageProducts>,
+        element:<Adminroute><ManageProducts></ManageProducts></Adminroute>,
 
       },
       {
