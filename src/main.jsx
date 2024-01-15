@@ -8,11 +8,17 @@ import { router } from './Routes/Router.jsx'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { QueryClient, QueryClientProvider} from 'react-query'
+
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProviders>
-   <RouterProvider router={router}></RouterProvider>
-   <ToastContainer></ToastContainer>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+        <ToastContainer></ToastContainer>
+      </QueryClientProvider>
     </AuthProviders>
   </React.StrictMode>
 )
