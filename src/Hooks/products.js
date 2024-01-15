@@ -25,3 +25,8 @@ export const getAddCart = async (email) => {
   return data
 }
 
+//Delete products
+export const deleteproduct = async (deleteproid) => {
+  const { deletedata } = await axiosSecure.delete(`/products/${deleteproid}`)
+  return deletedata;
+}

@@ -1,24 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { getAllProducts } from '../../Hooks/products';
+import { deleteproduct, getAllProducts } from '../../Hooks/products';
 import { MdUpdate,MdDelete } from "react-icons/md";
+import useGetAllProducts from '../../Hooks/useGetAllProducts';
 
 const ManageProducts = () => {
-    const [loading, setLoading] = useState(true);
-    const [manageproducts, setProductsmanage] = useState([]);
+    // const [loading, setLoading] = useState(true);
+    // const [manageproducts, setProductsmanage] = useState([]);
+    const [getAllProduct, refetch] = useGetAllProducts();
   
-    useEffect(() => {
-      setLoading(true);
-      getAllProducts()
-        .then(data => {
-          setProductsmanage(data);
-          setLoading(false);
-        })
-        .catch(error => {
-          console.error('Error fetching products:', error);
-          setLoading(false);
-        });
-    }, []);
-
+    // useEffect(() => {
+    //   setLoading(true);
+    //   getAllProducts()
+    //     .then(data => {
+    //       setProductsmanage(data);
+    //       setLoading(false);
+    //     })
+    //     .catch(error => {
+    //       console.error('Error fetching products:', error);
+    //       setLoading(false);
+    //     });
+    // }, []);
+    const handleDelete = async (id) => {
+        try {
+          await deleteproduct(id);
+          refetch();
+        } catch (error) {
+          console.error('Error deleting product:', error);
+        }
+      };
+    
     return (
         <div>
             <table className="min-w-full bg-white border border-gray-300">
@@ -31,12 +41,12 @@ const ManageProducts = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {manageproducts.map((product, index) => (
+                    {getAllProduct?.map((product, index) => (
                         <tr key={index}>
                             <td className="py-2 px-4 border-b">{product.productname}</td>
                             <td><img className='w-20' src={product.img} alt="" /></td>
-                            <td className="py-2 px-4 border-b"><MdDelete></MdDelete></td>
-                            <td className="py-2 px-4 border-b"><MdUpdate></MdUpdate></td>
+                            <td className="py-2 px-4 border-b"><MdDelete onClick={()=>handleDelete(product._id)} className='text-2xl'></MdDelete></td>
+                            <td className="py-2 px-4 border-b"><MdUpdate className='text-2xl'></MdUpdate></td>
                         </tr>
                     ))}
                 </tbody>
@@ -46,3 +56,7 @@ const ManageProducts = () => {
 };
 
 export default ManageProducts;
+
+
+
+
