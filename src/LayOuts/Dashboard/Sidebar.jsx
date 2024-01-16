@@ -12,6 +12,7 @@ import { IoBagAddSharp, IoHomeSharp } from "react-icons/io5";
 import { MdManageAccounts, MdAddShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import { getRoll } from '../../Hooks/auth'
+import useRole from '../../Hooks/useRole'
 
 
 
@@ -20,23 +21,24 @@ const Sidebar = () => {
     const { user } = useAuth();
     const [cartData, setCartData] = useState();
     const [isActive, setActive] = useState(false)
+    const [role, isLoading] = useRole();
 
     const handleToggle = () => {
         setActive(!isActive)
     }
 
+    // get role
+    // useEffect(() => {
+    //     const fetchCartData = async () => {
+    //         if (user?.email) {
+    //             const data = await getRoll(user?.email);
+    //             setCartData(data[0]);
+    //         }
+    //     };
 
-    useEffect(() => {
-        const fetchCartData = async () => {
-            if (user?.email) {
-                const data = await getRoll(user?.email);
-                setCartData(data[0]);
-            }
-        };
-
-        fetchCartData();
-    }, [user?.email]);
-    console.log(cartData?.role);
+    //     fetchCartData();
+    // }, [user?.email]);
+    // console.log(cartData?.role);
 
     return (
         <>
@@ -75,7 +77,7 @@ const Sidebar = () => {
 
                         <nav>
                             {
-                                cartData?.role === 'admin' && <>
+                                role?.[0].role === 'admin' && <>
                                     <MenuItem
                                         icon={IoBagAddSharp}
                                         label='Add Products'

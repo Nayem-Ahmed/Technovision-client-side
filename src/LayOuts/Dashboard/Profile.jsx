@@ -4,8 +4,8 @@ import useRole from "../../Hooks/useRole"
 
 const Profile = () => {
   const { user } = useAuth()
-  const [role] = useRole()
-  console.log(user)
+  const [role, isLoading] = useRole();
+  console.log(role)
   return (
     <div className='flex justify-center items-center'>
 
@@ -25,7 +25,7 @@ const Profile = () => {
           </a>
 
           <p className='p-2 px-4 text-xs text-white bg-pink-500 rounded-full'>
-            {role && role.toUpperCase()}
+            {role && role[0]?.role?.toUpperCase()}
           </p>
           <p className='mt-2 md:text-xl md:font-medium text-gray-800 '>
             User Id: {user.uid}

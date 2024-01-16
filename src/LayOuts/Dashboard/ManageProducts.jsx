@@ -47,7 +47,6 @@ const ManageProducts = () => {
         }
     };
     
-
     return (
         <div>
             <table className="min-w-full bg-white border border-gray-300">
