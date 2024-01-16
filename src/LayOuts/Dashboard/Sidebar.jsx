@@ -38,8 +38,6 @@ const Sidebar = () => {
     }, [user?.email]);
     console.log(cartData?.role);
 
-
-
     return (
         <>
             {/* Small Screen Navbar */}

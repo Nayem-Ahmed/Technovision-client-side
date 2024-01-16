@@ -30,3 +30,8 @@ export const deleteproduct = async (deleteproid) => {
   const { deletedata } = await axiosSecure.delete(`/products/${deleteproid}`)
   return deletedata;
 }
+//Delete products
+export const deleteCart = async (deletecartid) => {
+  const { deletecart} = await axiosSecure.delete(`/addcart/${deletecartid}`)
+  return deletecart;
+}
