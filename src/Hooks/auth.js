@@ -15,8 +15,14 @@ export const saveUser = async (user) => {
     const { data } = await axiosSecure(`/userrole/${email}`)
     return data
   }
+
   export const getAllRoleData = async ( ) => {
     const { data } = await axiosSecure(`/userrole`)
     return data
   }
   
+// make admin (patch)
+export const patchData = async (id) => {
+  const { data } = await axiosSecure.patch(`/userrole/${id}`)
+  return data
+}
