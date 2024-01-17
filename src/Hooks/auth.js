@@ -15,4 +15,8 @@ export const saveUser = async (user) => {
     const { data } = await axiosSecure(`/userrole/${email}`)
     return data
   }
+  export const getAllRoleData = async ( ) => {
+    const { data } = await axiosSecure(`/userrole`)
+    return data
+  }
   

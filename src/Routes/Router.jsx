@@ -13,6 +13,7 @@ import MyCart from "../LayOuts/Dashboard/MyCart";
 import ManageProducts from "../LayOuts/Dashboard/ManageProducts";
 import Profile from "../LayOuts/Dashboard/Profile";
 import Adminroute from "./Adminroute";
+import UserManage from "../LayOuts/Dashboard/UserManage";
 
 export const router = createBrowserRouter([
   {
@@ -54,6 +55,11 @@ export const router = createBrowserRouter([
       {
         path:'/dashboard/mycarts',
         element: <MyCart></MyCart>,
+
+      },
+      {
+        path:'/dashboard/usermanage',
+        element:<Adminroute> <UserManage></UserManage></Adminroute>,
 
       },
       {
