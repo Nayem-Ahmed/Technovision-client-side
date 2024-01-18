@@ -6,8 +6,6 @@ import { Navigate } from 'react-router-dom';
 
 const Adminroute = ({children}) => {
     const [role,loading] = useRole()
-    console.log(role);
-
     if (loading) return <Loader></Loader>;
     if (role && role === "admin") return children;
 

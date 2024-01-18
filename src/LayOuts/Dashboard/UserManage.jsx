@@ -4,8 +4,6 @@ import { patchData } from '../../Hooks/auth';
 
 const UserManage = () => {
     const [roledata, refetch] = useAllRole();
-    console.log(roledata);
-
     const handleAdmin = async (id) => {
         try {
             await patchData(id);

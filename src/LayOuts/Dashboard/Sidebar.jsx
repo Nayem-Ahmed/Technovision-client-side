@@ -14,10 +14,6 @@ import { Link } from 'react-router-dom'
 import { getRoll } from '../../Hooks/auth'
 import { GrUserManager } from "react-icons/gr";
 
-
-
-
-
 const Sidebar = () => {
     const { user } = useAuth();
     const [cartData, setCartData] = useState();
@@ -38,7 +34,7 @@ const Sidebar = () => {
 
         fetchCartData();
     }, [user?.email]);
-    console.log(cartData?.role);
+    // console.log(cartData?.role);
 
     return (
         <>
