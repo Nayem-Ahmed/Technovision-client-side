@@ -5,8 +5,6 @@ import { IoMdLock, IoMdMail } from 'react-icons/io';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import { toast } from 'react-toastify';
-import axios from 'axios';
- 
 
 const Login = () => {
     const { signIn, signInWithGoogle } = useAuth()
@@ -28,10 +26,6 @@ const Login = () => {
             const { user } = await signIn(data.email, data.password);
 
             // get token
-            axios.post('http://localhost:5000/jwt',user, {withCredentials:true})
-            .then(res=>{
-                console.log(res.data);
-            })
 
             toast('Signin successfull')
             navigate(location?.state ? location.state : '/');

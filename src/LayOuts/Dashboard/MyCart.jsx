@@ -14,7 +14,7 @@ const MyCart = () => {
     useEffect(() => {
         const fetchCartData = async () => {
             if (user?.email) {
-                const data = await getAddCart(user?.email);
+                const data = await getAddCart(user?.email,  { credentials: 'include' });
                 setCartData(data);
             }
         };
