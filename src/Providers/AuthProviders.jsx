@@ -2,7 +2,8 @@ import {createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEma
 import { createContext, useEffect, useState } from "react"
 import { auth } from "../Firebase/firebase.config"
 import { GoogleAuthProvider } from "firebase/auth";
-import axios from "axios";
+import axiosSecure from "../Hooks/axiosSecure";
+import axiosPublice from "../Hooks/axiosPublic";
  
 
 export const AuthContext = createContext(null)
@@ -34,7 +35,6 @@ const AuthProviders = ({ children }) => {
 
   const logOut = () => {
     setLoading(true)
-    // await removeToken()
     return signOut(auth)
   }
 
@@ -52,9 +52,9 @@ const AuthProviders = ({ children }) => {
       setUser(currentUser)
       console.log('CurrentUser-->', currentUser)
       setLoading(false)
-      
+
       if (currentUser) {
-        axios.post('http://localhost:5000/jwt',userEmail, {withCredentials:true})
+        axiosPublice.post('/jwt',userEmail)
         .then(res=>{
             console.log(res.data);
         })
@@ -62,7 +62,7 @@ const AuthProviders = ({ children }) => {
         
       }
       else{
-        axios.post('http://localhost:5000/logout ',userEmail, {withCredentials:true})
+        axiosSecure.post('/logout ',userEmail)
         .then(res=>{
             console.log(res.data);
         })
