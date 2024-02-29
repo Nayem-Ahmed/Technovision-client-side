@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <div>
             <Headroom>
-                <div className='flex  items-center justify-between px-5  w-full  bg-[#192a56]  z-50 shadow-sm'>
+                <div className='flex items-center justify-between px-5 w-full  bg-[#192a56]  z-50 shadow-sm'>
                     <div className='logo'>
                         <Link to='/'><img className='w-28' src={technovision} alt="" /></Link>
                     </div>

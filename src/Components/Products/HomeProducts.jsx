@@ -21,7 +21,7 @@ const HomeProducts = () => {
     const displayedProducts = products.slice(0, 6);
     return (
         <div className="mt-5 p-4">
-            <h1 className="text-3xl text-center font-semibold my-5 mb-4"><span className="text-red-500">Featured </span>Products</h1>
+            <h1 className="text-3xl text-center font-semibold my-5  mb-8"><span className="text-red-500 border-b-4 border-indigo-700">Featured </span><span className="border-b-4 border-indigo-700">Products</span></h1>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
                 {

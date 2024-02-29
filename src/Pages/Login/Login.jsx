@@ -27,7 +27,7 @@ const Login = () => {
 
             // get token
 
-            toast('Signin successfull')
+            toast.success('Signin successfull')
             navigate(location?.state ? location.state : '/');
 
 
@@ -50,7 +50,7 @@ const Login = () => {
 
             // get token
 
-            toast('Signin successfull')
+            toast.success('Signin successfull')
             navigate(location?.state ? location.state : '/login');
 
 

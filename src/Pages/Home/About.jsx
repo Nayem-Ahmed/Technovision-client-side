@@ -15,7 +15,7 @@ const About = () => {
                 <div className=''>
                     <div className='flex gap-6 mb-8'>
                         <div>
-                            <FaBell className='text-4xl text-red-500'></FaBell>
+                            <FaBell className='text-3xl text-red-500 animate-bounce'></FaBell>
                         </div>
                         <div>
                             <h1 className='text-xl font-semibold'>GPS System Tracking</h1>
@@ -24,7 +24,7 @@ const About = () => {
                     </div>
                     <div className='flex gap-6 mb-8'>
                         <div>
-                            <BiMessageRoundedDetail className='text-4xl text-red-500'></BiMessageRoundedDetail>
+                            <BiMessageRoundedDetail className='text-4xl text-red-500 animate-bounce'></BiMessageRoundedDetail>
                         </div>
                         <div>
                             <h1 className='text-xl font-semibold'>WiFi Data Sync</h1>
@@ -42,7 +42,7 @@ const About = () => {
                     </div>
                     <div className='flex gap-6'>
                         <div>
-                            <FaWifi className='text-4xl text-red-500'></FaWifi>
+                            <FaWifi className='text-4xl text-red-500 animate-bounce'></FaWifi>
                         </div>
                         <div>
                             <h1 className='text-xl font-semibold'>Weather Update</h1>
@@ -53,7 +53,7 @@ const About = () => {
                 </div>
 
                 <div>
-                    <img className='w-96' src={w} alt="" />
+                    <img className='w-96 animate-pulse' src={w} alt="" />
                 </div>
             </div>
 

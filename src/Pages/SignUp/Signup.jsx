@@ -39,7 +39,7 @@ const Signup = () => {
 
              // get token
 
-             toast('Sign Up successfull')
+             toast.success('Sign Up successfull')
              navigate('/')
              
 
